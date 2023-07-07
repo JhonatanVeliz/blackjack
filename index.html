@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Blackjack</title>
+
+    <!-- NORMALIZE -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/app.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <header class="header">
+        <h1 class="title">Blackjack</h1>
+    </header>
+
+    <div class="modal " id="container-datos">
+
+        <form action="" class="modal__container" id="form">
+            <h2 class="title title--modal">Porfavor ingresa tu nombre aqui</h2>
+            <label for="name" class="usuario__label" id="label">Tú Nombre</label>
+            <input type="text" id="name" class="usuario__name" placeholder=" ">
+            <div class="usuario__botones">
+                <button class="btn btn--succes btn--noshadow" id="cancelar">Cancelar</button>
+                <button class="btn btn--primary btn--noshadow btn--aceptar" id="aceptar">Aceptar</button>
+            </div>
+        </form>
+    </div>
+
+    <main class="main">
+
+        <div class="bottons">
+            <button class="btn btn--primary btnNuevo">Nuevo Juego</button>
+            <button class="btn btn--secundary" id="btnPedir">Pedir Carta</button>
+            <button class="btn btn--succes" id="btnDetener">Detener</button>
+        </div>
+
+        <article class="block-jugador">
+            <h2 class="name">Jugador <span id="usuario" class="usuario"></span> puntos: <small class="puntos">0</small></h2>
+            <div class="img-container" id="img_usuario"></div>
+        </article>
+
+        <article class="block-maquina">
+            <h2 class="name">Jugador <span id="maquina" class="usuario"></span> puntos: <small class="puntos">0</small></h2>
+            <div class="img-container" id="img_maquina"></div>
+        </article>
+
+    </main>
+
+    <div class="modal oculto" id="modal-game-over">
+        <div class="modal__container modal__container--red">
+            <h3 class="title title--modal">¡ Perdiste !</h3>
+            <p class="text">Tu resultado es: <strong id="resultado"></strong></p>
+            <button type="button" class="btn btn--succes btn--aceptar">X</button>
+        </div>
+    </div>
+
+    <div class="modal ganaste oculto" id="modal-ganar">
+        
+        <div class="modal__container modal__container--green">
+            <h2 class="title title--modal">¡ Ganaste !</h2>
+            <strong class="text" id="ganar-result"></strong>
+            <div class="usuario__botones">
+                <button class="btn btn--succes btn--noshadow btn--aceptar" id="fin">Finalizar</button>
+                <button class="btn btn--primary btn--noshadow btn--aceptar btnNuevo">Otra ronda</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/modales.js"></script>
+    <script src="./js/varaja.js"></script>
+</body>
+</html>
